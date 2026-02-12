@@ -13,6 +13,8 @@ const AllCarpets = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
+  const USD_TO_UZS = 12300;
+
   const { sendToTelegram } = useContext(TelegramContext);
 
   // 🔹 BARCHA MAHSULOTLAR
@@ -149,16 +151,17 @@ const AllCarpets = () => {
                 />
               </div>
 
-              <div className="m-2 flex justify-center gap-[20px] items-center">
-                <div className="leading-5">
-                  <h3 className="text-[20px] font-mono font-bold">
-                    {(product.price + 10).toLocaleString("de-DE")}$
-                  </h3>
-                  <h4 className="line-through opacity-40 text-[12px] font-mono font-bold">
-                    {product.demoPrice.toLocaleString("de-DE")}$
+              <div className="m-2 flex justify-center flex-col gap-[15px] items-center">
+                <img src={product.countri} alt="country" className="h-[25px]" />
+                <div className="leading-6">
+                  <h4 className=" text-[25px] font-mono font-bold">
+                    {(product.price * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
+                  </h4>
+                  <h4 className="line-through text-center opacity-40 text-[15px] font-mono font-bold">
+                    {(product.demoPrice * USD_TO_UZS).toLocaleString("uz-UZ")}{" "}
+                    so'm
                   </h4>
                 </div>
-                <img src={product.countri} alt="country" className="h-[25px]" />
               </div>
               {/* RAZMERLAR */}
               <div className="flex overflow-x-auto  gap-[5px] mt-[15px] ">

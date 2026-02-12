@@ -11,6 +11,8 @@ const ProductModal = ({ product, closeModal }) => {
     };
   }, []);
 
+  const USD_TO_UZS = 12300;
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -45,7 +47,7 @@ const ProductModal = ({ product, closeModal }) => {
               <h1 className=" uppercase font-mono ">#{product.design}</h1>
             </div>
             <div
-              className={`${product.rotate} mt-[20px]  mb-[50px] w-[100%] m-auto`}
+              className={`${product.rotate} mt-[20px]  mb-[20px] w-[100%] m-auto`}
             >
               <img
                 src={product.image}
@@ -64,13 +66,13 @@ const ProductModal = ({ product, closeModal }) => {
                 {product.aboutProduct}
               </h2>
             </div>
-            <div className=" flex justify-center items-center text-white ">
-              <p className=" font-mono font-bold text-[25px] ">
-                Цена: {(product.price + 10).toLocaleString("de-DE")}$
-                <span className=" font-mono font-bold text-[13px] line-through pl-[5px] opacity-35 text-white ">
-                  {product.demoPrice.toLocaleString("de-DE")}$
-                </span>
-              </p>
+            <div className="leading-6 text-center ">
+              <h4 className=" text-[25px] font-mono font-bold">
+                {(product.price * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
+              </h4>
+              <h4 className="line-through text-center opacity-40 text-[15px] font-mono font-bold">
+                {(product.demoPrice * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
+              </h4>
             </div>
 
             {/* RAZMERLAR */}
