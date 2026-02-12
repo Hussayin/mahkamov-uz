@@ -154,12 +154,15 @@ const AllCarpets = () => {
               <div className="m-2 flex justify-center flex-col gap-[15px] items-center">
                 <img src={product.countri} alt="country" className="h-[25px]" />
                 <div className="leading-6">
-                  <h4 className=" text-[25px] font-mono font-bold">
-                    {(product.price * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
-                  </h4>
                   <h4 className="line-through text-center opacity-40 text-[15px] font-mono font-bold">
                     {(product.demoPrice * USD_TO_UZS).toLocaleString("uz-UZ")}{" "}
                     so'm
+                  </h4>
+                  <h4 className=" text-[25px] font-mono font-bold">
+                    {(product.price * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
+                  </h4>
+                  <h4 className="text-center text-[15px] font-mono font-bold">
+                    {product.price}$
                   </h4>
                 </div>
               </div>
