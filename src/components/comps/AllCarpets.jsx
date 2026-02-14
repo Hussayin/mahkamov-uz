@@ -159,10 +159,11 @@ const AllCarpets = () => {
                     so'm
                   </h4>
                   <h4 className=" text-[25px] font-mono font-bold">
-                    {(product.price * USD_TO_UZS).toLocaleString("uz-UZ")} so'm
+                    {((product.price + 3) * USD_TO_UZS).toLocaleString("uz-UZ")}{" "}
+                    so'm
                   </h4>
                   <h4 className="text-center text-[15px] font-mono font-bold">
-                    {product.price}$
+                    {product.price + 3}$
                   </h4>
                 </div>
               </div>
